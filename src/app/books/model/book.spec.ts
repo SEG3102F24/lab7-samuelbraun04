@@ -1,7 +1,17 @@
-import { Book } from './book';
+import { Book, Author } from './book';
 
 describe('Book', () => {
   it('should create an instance', () => {
-    expect(new Book(1, 'test', 'test', 1)).toBeTruthy();
+    const authors: Author[] = []; 
+    const book = new Book(
+      1,                
+      'test category',  
+      'test title',     
+      1,                
+      authors,          
+      2023,             
+      'Test description'
+    );
+    expect(book).toBeTruthy();
   });
 });

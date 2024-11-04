@@ -4,9 +4,9 @@ export class Book {
     public category: string,
     public title: string,
     public cost: number,
-    public authors?: Author[],
-    public year?: number,
-    public description?: string
+    public authors: Author[],
+    public year: number,
+    public description: string
   ) {}
 }
 
@@ -15,5 +15,5 @@ export class Author {
     public id: number,
     public firstName: string,
     public lastName: string
-  ){}
+  ) {}
 }
