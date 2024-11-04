@@ -10,6 +10,7 @@ const Url = 'http://localhost:8080/books-api/';
   providedIn: 'root'
 })
 export class BooksService {
+
   private http: HttpClient = inject(HttpClient);
 
   public getBook(id: string): Observable<Book> {
@@ -33,5 +34,9 @@ export class BooksService {
 
   public updateBookAuthors(bookId: number, authorId: number): Observable<any> {
     return this.http.patch(Url + 'books/' + bookId + '/authors/' + authorId, {});
+  }
+
+  public getAuthorById(id: number): Observable<Author> {
+    return this.http.get<Author>(`${Url}authors/${id}`);
   }
 }
