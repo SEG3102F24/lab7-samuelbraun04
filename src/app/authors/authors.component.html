@@ -13,8 +13,10 @@
 
 <div *ngIf="author">
   <h3>Author Details</h3>
-  <p><strong>ID:</strong> {{ author.id }}</p>
-  <p><strong>Name:</strong> {{ author.firstName }} {{ author.lastName }}</p>
+  <p><strong>ID:</strong> {{ author?.id }}</p>
+  <p>
+    <strong>Name:</strong> {{ author?.firstName }} {{ author?.lastName }}
+  </p>
 </div>
 
 <div *ngIf="errorMessage">
