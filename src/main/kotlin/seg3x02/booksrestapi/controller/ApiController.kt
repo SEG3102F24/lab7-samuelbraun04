@@ -135,14 +135,14 @@ class ApiController(val authorRepository: AuthorRepository,
             .orElse(ResponseEntity.notFound().build())
     }
 
-    @Operation(summary = "Get an author by id")
-    @GetMapping("/authors/{id}")
-    fun getOrderById(@PathVariable("id") id: Long): ResponseEntity<AuthorRepresentation> {
-        return authorRepository.findById(id)
-            .map { author: Author ->  authorAssembler.toModel(author)}
-            .map { body: AuthorRepresentation -> ResponseEntity.ok(body) }
-            .orElse(ResponseEntity.notFound().build())
-    }
+    // @Operation(summary = "Get an author by id")
+    // @GetMapping("/authors/{id}")
+    // fun getAuthorById(@PathVariable("id") id: Long): ResponseEntity<AuthorRepresentation> {
+    //     return authorRepository.findById(id)
+    //         .map { author: Author ->  authorAssembler.toModel(author)}
+    //         .map { body: AuthorRepresentation -> ResponseEntity.ok(body) }
+    //         .orElse(ResponseEntity.notFound().build())
+    // }
 
     @Operation(summary = "Add a new book")
     @PostMapping("/books")

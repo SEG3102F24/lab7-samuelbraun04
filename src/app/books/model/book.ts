@@ -1,21 +1,19 @@
-import { TestBed } from '@angular/core/testing'
-import { BooksService } from './books.service';
-import {RouterTestingModule} from "@angular/router/testing";
-import { provideHttpClientTesting } from "@angular/common/http/testing";
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+export class Book {
+  constructor(
+    public id: number,
+    public category: string,
+    public title: string,
+    public cost: number,
+    public authors: Author[],
+    public year: number,
+    public description: string
+  ) {}
+}
 
-describe('BooksService', () => {
-  let service: BooksService;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    providers: [BooksService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-});
-    service = TestBed.inject(BooksService);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+export class Author {
+  constructor(
+    public id: number,
+    public firstName: string,
+    public lastName: string
+  ) {}
+}
