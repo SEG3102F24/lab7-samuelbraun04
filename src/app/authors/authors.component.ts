@@ -15,6 +15,13 @@ export class AuthorsComponent {
   constructor(private booksService: BooksService) {}
 
   onSubmit(): void {
+
+    if (this.authorId <= 0) {
+      this.errorMessage = 'Please enter a valid author ID.';
+      this.author = null;
+      return;
+    }
+
     this.booksService.getAuthorById(this.authorId).subscribe(
       (data: Author) => {
         this.author = data;
