@@ -8,7 +8,7 @@ import { Author } from '../books/model/book';
   styleUrls: ['./authors.component.css'],
 })
 export class AuthorsComponent {
-  authorId: number;
+  authorId!: number;
   author: Author | null = null;
   errorMessage: string | null = null;
 
